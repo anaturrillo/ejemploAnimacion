@@ -1,0 +1,18 @@
+div {
+	width: 250px;
+	height: 250px;
+	background-color: orange;
+	animation-name: un_efecto;
+	animation-duration: 3s;
+
+}
+
+@keyframes un_efecto{
+	from {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(359deg);
+	}
+}

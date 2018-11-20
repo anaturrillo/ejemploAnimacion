@@ -1,0 +1,154 @@
+body { margin: 0 auto }
+html, body, .wrapper { 
+	height: 100%;
+	overflow: hidden; 
+}
+.sky {
+	background-color: blue;
+	height: 45%;
+}
+
+.field {
+	background-color: green;
+	height: 20%;
+}
+
+.road {
+	background-color: grey;
+	height: 35%
+}
+
+.road div {
+	position: absolute;
+	top: 50%;
+	height: 2%;
+	border-bottom: 5px dashed yellow;
+	width: 100% 
+}
+
+.landscape-element {
+	position: relative;
+}
+
+
+/* AUTO */
+.car {
+	background-image: url(../img/car.png);
+	position: absolute;
+	top: 305px;
+	right: 0;
+	z-index: 9;
+	width: 400px;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	height: 200px;
+	animation-name: car;
+	animation-duration: 10s;
+	animation-iteration-count: 3;
+	animation-timing-function: linear;
+}
+
+.wheel {
+	position: relative;
+	width: 60px;
+	height: 60px;
+	animation-name: rotation;
+	animation-duration: 1s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-direction: reverse;
+	animation-iteration-count: 35;
+}
+
+.wheel img {
+	width: 100%;
+}
+
+.wheel.first {
+	top: 147px;
+	left: 57px;
+}
+
+.wheel.second {
+	top: 86px;
+	left: 263px;
+}
+
+
+/* NUBES */
+
+.cloud {
+	width: 100px;
+	height: 200px;
+	background-image: url('../img/cloud.png');
+	background-size: 100%;
+	position: relative;
+	left: -150px;
+	background-repeat: no-repeat;
+}
+
+.cloud:first-child {
+	animation-name: clouds;
+	animation-duration: 7s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+}
+
+.cloud:nth-child(2) {
+	animation-name: clouds;
+	animation-delay: 4s;
+	animation-duration: 5s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+}
+
+.cloud:nth-child(3) {
+	animation-name: clouds;
+	animation-delay: 2s;
+	animation-duration: 8s;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+}
+
+/* ANIMACIONES */
+
+@keyframes rotation {
+	from {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes car {
+	from {
+		right: -400px;
+	}
+
+	to {
+		right: 110%
+	}
+}
+
+@keyframes clouds {
+	0% { 
+		left: -100px; 
+		width: 30px;
+	}
+	
+	25%{ 
+		width: 60px; 
+	}
+	50%{ 
+		width: 100px;
+	}
+	75%{ 
+		width: 60px;
+	}
+	100%{ 
+		left: 100%; 
+		width: 30px;
+	}
+}
